@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETK Global Yogyakarta | Pusat Pelatihan Kerja & Bahasa Internasional</title>
+    <style>
+        /* ==========================================================================
+           RESET & STYLE UTAMA WEBSITE PROFIL (ETK GLOBAL BRANDING)
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #10b981;
+            --dark-color: #0f172a;
+            --light-color: #f8fafc;
+            --text-muted: #64748b;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section-padding { padding: 80px 0; }
+
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-header h2::after {
+            content: ''; width: 60px; height: 4px; background: var(--secondary-color);
+            position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); border-radius: 2px;
+        }
+        .section-header p { color: var(--text-muted); font-size: 1.1rem; }
+
+        /* ==========================================================================
+           TAMPILAN 1: HALAMAN PROFIL WEBSITE UTAMA (LANDING PAGE VIEW)
+           ========================================================================== */
+        #landing-page-view {
+            display: block;
+        }
+
+        .main-nav {
+            background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky; top: 0; z-index: 100;
+        }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo-area { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.3rem; color: var(--primary-color); }
+        .logo-area img { height: 45px; }
+        .nav-links { display: flex; gap: 30px; list-style: none; font-weight: 600; color: #475569; }
+        .nav-links a:hover { color: var(--secondary-color); }
+
+        .hero-section {
+            background: linear-gradient(135deg, rgba(30,58,138,0.95) 0%, rgba(15,23,42,0.98) 100%), 
+                        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200') no-repeat center center/cover;
+            color: white; padding: 120px 0; text-align: center;
+        }
+        .hero-content h1 { font-size: 3rem; font-weight: 800; margin-bottom: 20px; }
+        .hero-content p { font-size: 1.25rem; max-width: 700px; margin: 0 auto 35px auto; opacity: 0.9; }
+        .btn-primary {
+            background: var(--secondary-color); color: white; padding: 14px 30px;
+            border-radius: 8px; font-weight: 700; display: inline-block; transition: all 0.3s; border: none; cursor: pointer;
+        }
+        .btn-primary:hover { background: #2563eb; transform: translateY(-2px); }
+
+        .about-section { background: white; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-text h3 { font-size: 1.75rem; color: var(--primary-color); margin-bottom: 15px; }
+        .about-text p { color: #475569; margin-bottom: 20px; text-align: justify; }
+        .about-img img { width: 100%; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+
+        .program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .program-card {
+            background: white; border-radius: 12px; padding: 40px 30px; border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02); display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .program-card h3 { font-size: 1.4rem; color: var(--primary-color); margin-bottom: 10px; }
+        .band-tag {
+            display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 14px;
+            border-radius: 20px; font-size: 0.85rem; font-weight: 700; margin-bottom: 20px; align-self: flex-start;
+        }
+        .program-card p { color: #475569; font-size: 0.95rem; margin-bottom: 30px; flex-grow: 1; }
+        
+        .btn-card {
+            background: var(--primary-color); color: white; border: none; padding: 12px 20px;
+            border-radius: 8px; font-weight: 600; text-align: center; cursor: pointer; width: 100%;
+        }
+        .btn-card:hover { background: #1d4ed8; }
+        .btn-accent { background: var(--accent-color); }
+        .btn-accent:hover { background: #059669; }
+
+        .contact-section { background: white; }
+        .contact-box { background: var(--light-color); border-radius: 12px; padding: 40px; text-align: center; max-width: 600px; margin: 0 auto; }
+        .footer-main { background: var(--dark-color); color: #94a3b8; padding: 50px 0; text-align: center; }
+
+        /* ==========================================================================
+           TAMPILAN 2: SUB-APLIKASI INTERNAL (KURSUS & TES SIMULATOR)
+           Disembunyikan sepenuhnya dari awal, masuk lewat "IELTS Preparation"
+           ========================================================================== */
+        #sub-application-view {
+            display: none; /* TERSEMBUNYI DARI AWAL */
+            width: 100vw; height: 100vh; background: #ffffff;
+            position: fixed; top: 0; left: 0; z-index: 99999;
+        }
+        
+        .app-navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            background: #ffffff; padding: 0 35px; border-bottom: 1px solid #e2e8f0; height: 70px;
+        }
+        .app-brand { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+        .app-brand img { height: 38px; }
+        
+        .btn-exit-portal {
+            background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1;
+            padding: 8px 18px; border-radius: 6px; font-weight: 600; cursor: pointer;
+        }
+        .btn-exit-portal:hover { background: #ef4444; color: white; border-color: #ef4444; }
+
+        .app-layout-grid { display: grid; grid-template-columns: 280px 1fr; height: calc(100vh - 70px); }
+        
+        .app-sidebar-nav {
+            background: var(--light-color); border-right: 1px solid #e2e8f0;
+            padding: 25px 20px; display: flex; flex-direction: column; gap: 10px;
+        }
+        .side-link {
+            background: transparent; color: #475569; border: none; padding: 14px 18px;
+            border-radius: 8px; text-align: left; font-weight: 600; font-size: 0.95rem; cursor: pointer;
+        }
+        .side-link:hover { background: #e2e8f0; }
+        .side-link.active-tab { background: var(--secondary-color); color: white; }
+
+        .app-viewport { padding: 35px; overflow-y: auto; background: #ffffff; }
+        .app-panel-view { display: none; }
+        .app-panel-view.active-panel { display: block; }
+
+        .simulator-iframe-box {
+            width: 100%; height: 680px; border: 1px solid #cbd5e1; border-radius: 10px;
+            overflow: hidden; margin-top: 20px; position: relative; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .simulator-iframe-box iframe { position: absolute; top:0; left: 0; width: 100%; height: 100%; border: none; }
+
+        .level-selector-row { display: flex; gap: 10px; margin-top: 20px; }
+        .chip-btn {
+            background: #f1f5f9; border: 1px solid #e2e8f0; padding: 10px 20px;
+            border-radius: 30px; cursor: pointer; font-weight: 600; font-size: 0.9rem;
+        }
+        .chip-btn.active-chip { background: var(--accent-color); color: white; border-color: var(--accent-color); }
+
+        @media (max-width: 992px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .app-layout-grid { grid-template-columns: 1fr; }
+            .app-sidebar-nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+       BAGIAN A: WEBSITE PROFIL RESMI UTAMA (TAMPIL AWAL)
+       ========================================================================== -->
+    <div id="landing-page-view">
+        <nav class="main-nav">
+            <div class="container nav-container">
+                <div class="logo-area">
+                    <img src="https://cdn.statically.io/gh/gasfarrasyid/etk_bisa/main/logo_etk_cr.png" alt="ETK Logo">
+                    <span>ETK Global Yogyakarta</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#hero">Beranda</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#programs">Program Kursus</a></li>
+                    <li><a href="#contact">Hubungi Kami</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <section id="hero" class="hero-section">
+            <div class="container hero-content">
+                <h1>Raih Peluang Karir Internasional Anda</h1>
+                <p>Lembaga Pelatihan Kerja Resmi Khusus Penguasaan Kompetensi Bahasa Inggris Aktif, Persiapan Ujian Standar Global, dan Pendampingan Studi Luar Negeri.</p>
+                <a href="#programs" class="btn-primary">Lihat Program Kami</a>
+            </div>
+        </section>
+
+        <section id="about" class="about-section section-padding">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h3>Membangun Sumber Daya Berdaya Saing Global</h3>
+                        <p>ETK Global Yogyakarta hadir sebagai jembatan emas bagi para mahasiswa, profesional, dan akademisi untuk menembus batas kompetensi internasional. Kami berfokus pada metode pelatihan akseleratif yang terukur dan teruji.</p>
+                        <p>Dengan fasilitas modern serta kurikulum terintegrasi, kami berkomitmen untuk melahirkan lulusan yang siap bersaing dalam iklim rekrutmen global, beasiswa luar negeri, dan migrasi profesional.</p>
+                    </div>
+                    <div class="about-img">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800" alt="Belajar di ETK">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="programs" class="section-padding" style="background: #f1f5f9;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Program Pelatihan Unggulan</h2>
+                    <p>Pilih jalur akselerasi masa depan kurikulum internasional Anda.</p>
+                </div>
+                
+                <div class="program-grid">
+                    <!-- Kartu Kursus 1 -->
+                    <div class="program-card">
+                        <div>
+                            <h3>General English</h3>
+                            <p class="band-tag">Fluency Target</p>
+                            <p>Pembentukan fondasi berbicara, mendengar, serta pemahaman tata bahasa Inggris bisnis aktif dari level pemula.</p>
+                        </div>
+                        <button class="btn-card" onclick="alert('Pendaftaran Hubungi Admin Kantor.')">Info Selengkapnya</button>
+                    </div>
+
+                    <!-- KARTU KURSUS 2: PINTU MASUK UTAMA KE SUB-APLIKASI -->
+                    <div class="program-card" style="border-color: var(--secondary-color); box-shadow: 0 4px 15px rgba(59,130,246,0.15);">
+                        <div>
+                            <h3>IELTS Preparation</h3>
+                            <p class="band-tag">Band 9 Goal</p>
+                            <p>Program dekonstruksi taktis pengujian IELTS. Klik tombol di bawah untuk langsung membuka portal aplikasi ujian penempatan khusus.</p>
+                        </div>
+                        <!-- DISINI PILIHAN MASUKNYA -->
+                        <button class="btn-card btn-accent" onclick="launchSubApplication()">Ambil Penempatan →</button>
+                    </div>
+
+                    <!-- Kartu Kursus 3 -->
+                    <div class="program-card">
+                        <div>
+                            <h3>Corporate Training</h3>
+                            <p class="band-tag">Professional Scale</p>
+                            <p>Program eksklusif rancangan khusus bagi institusi pemerintahan, universitas, maupun korporasi bisnis multinasional.</p>
+                        </div>
+                        <button class="btn-card" onclick="alert('Hubungi Departemen Hubungan Kemitraan ETK.')">Hubungi Kemitraan</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Mulai Langkah Anda Sekarang</h2>
+                </div>
+                <div class="contact-box">
+                    <p style="font-size: 1.1rem; margin-bottom: 20px; color: #475569;">Punya pertanyaan mengenai program kami atau ingin berkonsultasi langsung?</p>
+                    <p style="font-weight: 700; font-size: 1.3rem; color: var(--primary-color);">Yogyakarta, Special Region of Yogyakarta, Indonesia</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer-main">
+            <p>&copy; 2026 ETK Global Yogyakarta. Lembaga Pendidikan Terakreditasi. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+
+    <!-- ==========================================================================
+       BAGIAN B: SUB-APLIKASI INTERNAL (DASHBOARD & SIMULATOR)
+       ========================================================================== -->
+    <div id="sub-application-view">
+        <nav class="app-navbar">
+            <div class="app-brand">
+                <img src="https://cdn.statically.io/gh/gasfarrasyid/etk_bisa/main/logo_etk_cr.png" alt="Aset Logo">
+                <span>ETK Global - Academic Application System</span>
+            </div>
+            <button class="btn-exit-portal" onclick="terminateSubApplication()">✕ Keluar Aplikasi Portal</button>
+        </nav>
+
+        <div class="app-layout-grid">
+            <div class="app-sidebar-nav">
+                <button class="side-link" onclick="toggleAppWorkspace(event, 'matrix-view')">English Skills Matrix</button>
+                <button class="side-link active-tab" onclick="toggleAppWorkspace(event, 'simulator-view')">IELTS Placement Test</button>
+                <button class="side-link" onclick="toggleAppWorkspace(event, 'method-view')">Metode Pembelajaran</button>
+            </div>
+
+            <div class="app-viewport">
+                <!-- Tab Aplikasi 1 -->
+                <div id="matrix-view" class="app-panel-view">
+                    <h2>English Skills Matrix Curriculum</h2>
+                    <p style="color: var(--text-muted); margin-top: 10px;">Struktur pemetaan kompetensi kebahasaan terpadu berdasarkan standar baku CEFR.</p>
+                </div>
+
+                <!-- Tab Aplikasi 2 (Default Aktif) -->
+                <div id="simulator-view" class="app-panel-view active-panel">
+                    <h2>IELTS Placement Test Simulator</h2>
+                    <p style="color: var(--text-muted);">Pilih tingkatan ujian di bawah ini. Simulator ujian resmi akan terikat aman di dalam sistem sandbox ETK.</p>
+                    
+                    <div class="level-selector-row">
+                        <button class="chip-btn active-chip" onclick="refreshIframeSource(this, 'https://gyoutrain-lab.github.io/IELTS-test-band9-2/')">Basic (Band 9-2)</button>
+                        <button class="chip-btn" onclick="refreshIframeSource(this, 'https://gyoutrain-lab.github.io/IELTS-test-audit-1/')">Intermediate (Audit 1)</button>
+                        <button class="chip-btn" onclick="refreshIframeSource(this, 'https://gyoutrain-lab.github.io/IELTS-test-audit-8/')">Advanced (Audit 8)</button>
+                    </div>
+
+                    <div class="simulator-iframe-box">
+                        <iframe id="portalSimulationFrame" src="" title="IELTS Test Application Panel"></iframe>
+                    </div>
+                </div>
+
+                <!-- Tab Aplikasi 3 -->
+                <div id="method-view" class="app-panel-view">
+                    <h2>Metode Pembelajaran Akseleratif PPS</h2>
+                    <p style="color: var(--text-muted); margin-top: 10px;">Sistem pendampingan berkala terstruktur guna pencapaian band score target.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+       JAVASCRIPT ROUTER CONTROLLER
+       ========================================================================== -->
+    <script>
+        // Jalankan sub-aplikasi saat tombol "IELTS Preparation" diklik
+        function launchSubApplication() {
+            document.getElementById('landing-page-view').style.display = 'none';
+            document.getElementById('sub-application-view').style.display = 'block';
+            
+            // Muat jenis tes default (Band 9-2)
+            document.getElementById('portalSimulationFrame').src = "https://gyoutrain-lab.github.io/IELTS-test-band9-2/";
+            window.scrollTo(0, 0);
+        }
+
+        // Keluar dari sub-aplikasi dan kembali ke halaman utama profil
+        function terminateSubApplication() {
+            document.getElementById('sub-application-view').style.display = 'none';
+            document.getElementById('landing-page-view').style.display = 'block';
+            document.getElementById('portalSimulationFrame').src = "";
+        }
+
+        // Navigasi internal tab sub-aplikasi
+        function toggleAppWorkspace(event, panelId) {
+            var i, views, tabs;
+            views = document.getElementsByClassName("app-panel-view");
+            for (i = 0; i < views.length; i++) { views[i].classList.remove("active-panel"); }
+            tabs = document.getElementsByClassName("side-link");
+            for (i = 0; i < tabs.length; i++) { tabs[i].classList.remove("active-tab"); }
+            
+            document.getElementById(panelId).classList.add("active-panel");
+            event.currentTarget.classList.add("active-tab");
+        }
+
+        // Switch source simulator antar level paket soal
+        function refreshIframeSource(chipElement, urlTarget) {
+            document.getElementById('portalSimulationFrame').src = urlTarget;
+            var siblingChips = chipElement.parentElement.getElementsByClassName('chip-btn');
+            for (var i = 0; i < siblingChips.length; i++) { siblingChips[i].classList.remove('active-chip'); }
+            chipElement.classList.add('active-chip');
+        }
+    </script>
+</body>
+</html>
