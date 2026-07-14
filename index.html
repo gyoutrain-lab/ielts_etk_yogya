@@ -4,8 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ETK Global Yogyakarta | Pusat Pelatihan Kerja & Bahasa Internasional</title>
-    <!-- FAVICON INTEGRATION -->
-    <link rel="shortcut icon" href="https://cdn.statically.io/gh/gasfarrasyid/etk_bisa/main/logo_etk_cr.png" type="image/png">
+    
+    <!-- INTEGRASI FAVICON -->
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/gyoutrain-lab/ielts_etk_yogya/main/logo_etk_cr.png">
+    <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/gyoutrain-lab/ielts_etk_yogya/main/logo_etk_cr.png">
+
+    <!-- INTEGRASI THUMBNAIL PREVIEW (OPEN GRAPH / LINK ADDRESS) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gyoutrain-lab.github.io/ielts_etk_yogya/">
+    <meta property="og:title" content="ETK Global Yogyakarta | Pusat Pelatihan Kerja & Bahasa Internasional">
+    <meta property="og:description" content="Lembaga Pelatihan Kerja Resmi Khusus Penguasaan Kompetensi Bahasa Inggris Aktif dan Persiapan Ujian Standar Global.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/gyoutrain-lab/ielts_etk_yogya/main/etk_future.png">
+
+    <!-- TWITTER CARD THUMBNAIL -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ETK Global Yogyakarta">
+    <meta name="twitter:description" content="Pusat Pelatihan Kerja & Bahasa Internasional terakreditasi di Yogyakarta.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/gyoutrain-lab/ielts_etk_yogya/main/etk_future.png">
     
     <style>
         /* ==========================================================================
@@ -59,13 +74,10 @@
             display: block;
         }
 
-        /* BAR NAVIGASI BARU:
-           - Menggunakan gambar logo sebagai background
-           - Margin kiri 0 (Penuh ke tepi) & Full Bar Corner (Tidak membulat)
-           - Gradasi warna dengan pencahayaan terang dari sisi kanan */
+        /* BAR NAVIGASI DENGAN BACKROUND GRADASI CAHAYA KANAN & LOGO */
         .main-nav {
             background: linear-gradient(90deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 138, 0.85) 60%, rgba(59, 130, 246, 0.7) 100%), 
-                        url('https://cdn.statically.io/gh/gasfarrasyid/etk_bisa/main/logo_etk_cr.png') repeat;
+                        url('https://raw.githubusercontent.com/gyoutrain-lab/ielts_etk_yogya/main/logo_etk_cr.png') repeat;
             background-size: contain;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             position: sticky;
@@ -74,7 +86,7 @@
             width: 100%;
             margin-left: 0;
             margin-right: 0;
-            border-radius: 0; /* Full Bar Corner */
+            border-radius: 0;
         }
         .nav-container { 
             display: flex; 
@@ -153,7 +165,7 @@
 
         .contact-section { background: white; }
         
-        /* FORM PENDAFTARAN PROFESIONAL & ELEMEN WA */
+        /* LAYOUT REGISTRASI & AREA WHATSAPP */
         .registration-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -219,7 +231,7 @@
             text-decoration: underline;
         }
         
-        /* DESAIN FORMULIR AKTIF */
+        /* FORMULIR DAFTAR */
         .reg-form {
             display: flex;
             flex-direction: column;
@@ -270,7 +282,7 @@
         .footer-main { background: var(--dark-color); color: #94a3b8; padding: 50px 0; text-align: center; }
 
         /* ==========================================================================
-           TAMPILAN 2: SUB-APLIKASI INTERNAL (KURSUS & TES SIMULATOR)
+           TAMPILAN 2: SUB-APLIKASI INTERNAL (DASHBOARD)
            ========================================================================== */
         #sub-application-view {
             display: none; 
@@ -327,20 +339,20 @@
             .app-sidebar-nav { display: none; }
             .registration-container { grid-template-columns: 1fr; padding: 25px; }
             .nav-container { padding: 0 20px; }
-            .nav-links { display: none; } /* Menyembunyikan link di layar HP demi kerapihan */
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
     <!-- ==========================================================================
-       BAGIAN A: WEBSITE PROFIL RESMI UTAMA (TAMPIL AWAL)
+       BAGIAN A: WEBSITE PROFIL RESMI UTAMA
        ========================================================================== -->
     <div id="landing-page-view">
         <nav class="main-nav">
             <div class="nav-container">
                 <div class="logo-area">
-                    <img src="https://cdn.statically.io/gh/gasfarrasyid/etk_bisa/main/logo_etk_cr.png" alt="ETK Logo">
+                    <img src="https://raw.githubusercontent.com/gyoutrain-lab/ielts_etk_yogya/main/logo_etk_cr.png" alt="ETK Logo">
                     <span>ETK Global Yogyakarta</span>
                 </div>
                 <ul class="nav-links">
@@ -383,7 +395,6 @@
                 </div>
                 
                 <div class="program-grid">
-                    <!-- Kartu Kursus 1 -->
                     <div class="program-card">
                         <div>
                             <h3>General English</h3>
@@ -393,7 +404,6 @@
                         <button class="btn-card" onclick="location.href='#contact'">Daftar Sekarang</button>
                     </div>
 
-                    <!-- KARTU KURSUS 2: PINTU MASUK UTAMA KE SUB-APLIKASI -->
                     <div class="program-card" style="border-color: var(--secondary-color); box-shadow: 0 4px 15px rgba(59,130,246,0.15);">
                         <div>
                             <h3>IELTS Preparation</h3>
@@ -403,7 +413,6 @@
                         <button class="btn-card btn-accent" onclick="launchSubApplication()">Ambil Penempatan →</button>
                     </div>
 
-                    <!-- Kartu Kursus 3 -->
                     <div class="program-card">
                         <div>
                             <h3>Corporate Training</h3>
@@ -439,7 +448,6 @@
                         <p style="font-weight: 700; font-size: 1.1rem; color: var(--primary-color);">📍 Yogyakarta, Indonesia</p>
                     </div>
 
-                    <!-- FORMULIR PENDAFTARAN AKTIF -->
                     <form class="reg-form" onsubmit="sendRegistrationToWA(event)">
                         <div class="form-group">
                             <label for="reg-name">Nama Lengkap *</label>
@@ -475,12 +483,12 @@
 
 
     <!-- ==========================================================================
-       BAGIAN B: SUB-APLIKASI INTERNAL (DASHBOARD & SIMULATOR)
+       BAGIAN B: SUB-APLIKASI INTERNAL
        ========================================================================== -->
     <div id="sub-application-view">
         <nav class="app-navbar">
             <div class="app-brand">
-                <img src="https://cdn.statically.io/gh/gasfarrasyid/etk_bisa/main/logo_etk_cr.png" alt="Aset Logo">
+                <img src="https://raw.githubusercontent.com/gyoutrain-lab/ielts_etk_yogya/main/logo_etk_cr.png" alt="Aset Logo">
                 <span>ETK Global - Academic Application System</span>
             </div>
             <button class="btn-exit-portal" onclick="terminateSubApplication()">✕ Keluar Aplikasi Portal</button>
@@ -494,13 +502,11 @@
             </div>
 
             <div class="app-viewport">
-                <!-- Tab Aplikasi 1 -->
                 <div id="matrix-view" class="app-panel-view">
                     <h2>English Skills Matrix Curriculum</h2>
                     <p style="color: var(--text-muted); margin-top: 10px;">Struktur pemetaan kompetensi kebahasaan terpadu berdasarkan standar baku CEFR.</p>
                 </div>
 
-                <!-- Tab Aplikasi 2 (Default Aktif) -->
                 <div id="simulator-view" class="app-panel-view active-panel">
                     <h2>IELTS Placement Test Simulator</h2>
                     <p style="color: var(--text-muted);">Pilih tingkatan ujian di bawah ini. Simulator ujian resmi akan terikat aman di dalam sistem sandbox ETK.</p>
@@ -516,7 +522,6 @@
                     </div>
                 </div>
 
-                <!-- Tab Aplikasi 3 -->
                 <div id="method-view" class="app-panel-view">
                     <h2>Metode Pembelajaran Akseleratif PPS</h2>
                     <p style="color: var(--text-muted); margin-top: 10px;">Sistem pendampingan berkala terstruktur guna pencapaian band score target.</p>
@@ -526,27 +531,22 @@
     </div>
 
     <!-- ==========================================================================
-       JAVASCRIPT ROUTER CONTROLLER
+       JAVASCRIPT CONTROLLER
        ========================================================================== -->
     <script>
-        // Jalankan sub-aplikasi saat tombol "IELTS Preparation" diklik
         function launchSubApplication() {
             document.getElementById('landing-page-view').style.display = 'none';
             document.getElementById('sub-application-view').style.display = 'block';
-            
-            // Muat jenis tes default (Band 9-2)
             document.getElementById('portalSimulationFrame').src = "https://gyoutrain-lab.github.io/IELTS-test-band9-2/";
             window.scrollTo(0, 0);
         }
 
-        // Keluar dari sub-aplikasi dan kembali ke halaman utama profil
         function terminateSubApplication() {
             document.getElementById('sub-application-view').style.display = 'none';
             document.getElementById('landing-page-view').style.display = 'block';
             document.getElementById('portalSimulationFrame').src = "";
         }
 
-        // Navigasi internal tab sub-aplikasi
         function toggleAppWorkspace(event, panelId) {
             var i, views, tabs;
             views = document.getElementsByClassName("app-panel-view");
@@ -558,7 +558,6 @@
             event.currentTarget.classList.add("active-tab");
         }
 
-        // Switch source simulator antar level paket soal
         function refreshIframeSource(chipElement, urlTarget) {
             document.getElementById('portalSimulationFrame').src = urlTarget;
             var siblingChips = chipElement.parentElement.getElementsByClassName('chip-btn');
@@ -566,17 +565,14 @@
             chipElement.classList.add('active-chip');
         }
 
-        // Fungsi Integrasi Pengiriman Form Registrasi ke WhatsApp Admin
         function sendRegistrationToWA(event) {
             event.preventDefault();
             
-            // Ambil data formulir
             const name = document.getElementById('reg-name').value;
             const phone = document.getElementById('reg-phone').value;
             const program = document.getElementById('reg-program').value;
             const notes = document.getElementById('reg-notes').value || "-";
             
-            // Format Pesan WhatsApp
             const waNumber = "6281901685253"; 
             const baseMessage = `Halo Admin ETK Global Yogyakarta,%0A%0ASaya ingin mendaftar program pelatihan profesional berikut:%0A%0A` + 
                                 `📝 *Nama:* ${encodeURIComponent(name)}%0A` +
@@ -586,8 +582,6 @@
                                 `Mohon info langkah pendaftaran selanjutnya. Terima kasih!`;
             
             const waUrl = `https://wa.me/${waNumber}?text=${baseMessage}`;
-            
-            // Arahkan user ke WhatsApp chat
             window.open(waUrl, '_blank');
         }
     </script>
